@@ -27,6 +27,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Class10th (Divide and Conqu
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Class11th (Quick Sort)", "..\Class11th (Quick Sort)\Class11th (Quick Sort).vcxproj", "{6B31F673-BBC0-487E-ACBF-7509EE137E9F}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Class12th (Dynamic Programming)", "..\Class12th (Dynamic Programming)\Class12th (Dynamic Programming).vcxproj", "{673E1A69-39ED-4D5F-8ACB-FE2D205F100C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -131,6 +133,14 @@ Global
 		{6B31F673-BBC0-487E-ACBF-7509EE137E9F}.Release|x64.Build.0 = Release|x64
 		{6B31F673-BBC0-487E-ACBF-7509EE137E9F}.Release|x86.ActiveCfg = Release|Win32
 		{6B31F673-BBC0-487E-ACBF-7509EE137E9F}.Release|x86.Build.0 = Release|Win32
+		{673E1A69-39ED-4D5F-8ACB-FE2D205F100C}.Debug|x64.ActiveCfg = Debug|x64
+		{673E1A69-39ED-4D5F-8ACB-FE2D205F100C}.Debug|x64.Build.0 = Debug|x64
+		{673E1A69-39ED-4D5F-8ACB-FE2D205F100C}.Debug|x86.ActiveCfg = Debug|Win32
+		{673E1A69-39ED-4D5F-8ACB-FE2D205F100C}.Debug|x86.Build.0 = Debug|Win32
+		{673E1A69-39ED-4D5F-8ACB-FE2D205F100C}.Release|x64.ActiveCfg = Release|x64
+		{673E1A69-39ED-4D5F-8ACB-FE2D205F100C}.Release|x64.Build.0 = Release|x64
+		{673E1A69-39ED-4D5F-8ACB-FE2D205F100C}.Release|x86.ActiveCfg = Release|Win32
+		{673E1A69-39ED-4D5F-8ACB-FE2D205F100C}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
