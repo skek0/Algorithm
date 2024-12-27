@@ -35,6 +35,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Class14th (Sieve of Eratost
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Class15th (Greedy Algorithm)", "..\Class15th (Greedy Algorithm)\Class15th (Greedy Algorithm).vcxproj", "{D5A725DE-E35A-4AA3-AF57-2937DA63E8DB}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Class16th (Depth First Search)", "..\Class16th (Depth First Search)\Class16th (Depth First Search).vcxproj", "{2B8FFFEB-42B6-4C07-BE85-2ECFFEA8C6BA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -171,6 +173,14 @@ Global
 		{D5A725DE-E35A-4AA3-AF57-2937DA63E8DB}.Release|x64.Build.0 = Release|x64
 		{D5A725DE-E35A-4AA3-AF57-2937DA63E8DB}.Release|x86.ActiveCfg = Release|Win32
 		{D5A725DE-E35A-4AA3-AF57-2937DA63E8DB}.Release|x86.Build.0 = Release|Win32
+		{2B8FFFEB-42B6-4C07-BE85-2ECFFEA8C6BA}.Debug|x64.ActiveCfg = Debug|x64
+		{2B8FFFEB-42B6-4C07-BE85-2ECFFEA8C6BA}.Debug|x64.Build.0 = Debug|x64
+		{2B8FFFEB-42B6-4C07-BE85-2ECFFEA8C6BA}.Debug|x86.ActiveCfg = Debug|Win32
+		{2B8FFFEB-42B6-4C07-BE85-2ECFFEA8C6BA}.Debug|x86.Build.0 = Debug|Win32
+		{2B8FFFEB-42B6-4C07-BE85-2ECFFEA8C6BA}.Release|x64.ActiveCfg = Release|x64
+		{2B8FFFEB-42B6-4C07-BE85-2ECFFEA8C6BA}.Release|x64.Build.0 = Release|x64
+		{2B8FFFEB-42B6-4C07-BE85-2ECFFEA8C6BA}.Release|x86.ActiveCfg = Release|Win32
+		{2B8FFFEB-42B6-4C07-BE85-2ECFFEA8C6BA}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
