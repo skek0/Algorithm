@@ -37,6 +37,10 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Class15th (Greedy Algorithm
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Class16th (Depth First Search)", "..\Class16th (Depth First Search)\Class16th (Depth First Search).vcxproj", "{2B8FFFEB-42B6-4C07-BE85-2ECFFEA8C6BA}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Class17th (Breadth First Search)", "..\Class17th (Breadth First Search)\Class17th (Breadth First Search).vcxproj", "{04616260-6AA4-4F0C-A48B-42C18F04BA3B}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Class18th (Union Find)", "..\Class18th (Union Find)'\Class18th (Union Find)'.vcxproj", "{EEE5D254-33BF-44B0-BC07-FB58298F8465}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -181,6 +185,22 @@ Global
 		{2B8FFFEB-42B6-4C07-BE85-2ECFFEA8C6BA}.Release|x64.Build.0 = Release|x64
 		{2B8FFFEB-42B6-4C07-BE85-2ECFFEA8C6BA}.Release|x86.ActiveCfg = Release|Win32
 		{2B8FFFEB-42B6-4C07-BE85-2ECFFEA8C6BA}.Release|x86.Build.0 = Release|Win32
+		{04616260-6AA4-4F0C-A48B-42C18F04BA3B}.Debug|x64.ActiveCfg = Debug|x64
+		{04616260-6AA4-4F0C-A48B-42C18F04BA3B}.Debug|x64.Build.0 = Debug|x64
+		{04616260-6AA4-4F0C-A48B-42C18F04BA3B}.Debug|x86.ActiveCfg = Debug|Win32
+		{04616260-6AA4-4F0C-A48B-42C18F04BA3B}.Debug|x86.Build.0 = Debug|Win32
+		{04616260-6AA4-4F0C-A48B-42C18F04BA3B}.Release|x64.ActiveCfg = Release|x64
+		{04616260-6AA4-4F0C-A48B-42C18F04BA3B}.Release|x64.Build.0 = Release|x64
+		{04616260-6AA4-4F0C-A48B-42C18F04BA3B}.Release|x86.ActiveCfg = Release|Win32
+		{04616260-6AA4-4F0C-A48B-42C18F04BA3B}.Release|x86.Build.0 = Release|Win32
+		{EEE5D254-33BF-44B0-BC07-FB58298F8465}.Debug|x64.ActiveCfg = Debug|x64
+		{EEE5D254-33BF-44B0-BC07-FB58298F8465}.Debug|x64.Build.0 = Debug|x64
+		{EEE5D254-33BF-44B0-BC07-FB58298F8465}.Debug|x86.ActiveCfg = Debug|Win32
+		{EEE5D254-33BF-44B0-BC07-FB58298F8465}.Debug|x86.Build.0 = Debug|Win32
+		{EEE5D254-33BF-44B0-BC07-FB58298F8465}.Release|x64.ActiveCfg = Release|x64
+		{EEE5D254-33BF-44B0-BC07-FB58298F8465}.Release|x64.Build.0 = Release|x64
+		{EEE5D254-33BF-44B0-BC07-FB58298F8465}.Release|x86.ActiveCfg = Release|Win32
+		{EEE5D254-33BF-44B0-BC07-FB58298F8465}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
