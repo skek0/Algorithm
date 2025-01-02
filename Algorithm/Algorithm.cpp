@@ -1,92 +1,129 @@
 ﻿#include <iostream>
 #include <vector>
-#include <queue>
+#include <algorithm>
 #define SIZE 8
 
 using namespace std;
+
 class Graph
 {
 private:
-	int degree[SIZE]; // 진입 차수
-	queue<int>  queue;
-	vector<int> graph[SIZE];
+	class Edge
+	{
+	private:
+		int x;
+		int y;
+		int distance;
+		
+	public:
+		Edge(int x, int y, int distance)
+		{
+			this->x = x;
+			this->y = y;
+			this->distance = distance;
+		}
+
+		const int& X()
+		{
+			return x;
+		}
+		const int& Y()
+		{
+			return y;
+		}
+		const int& Distance()
+		{
+			return distance;
+		}
+
+		const bool operator < (const Edge& edge)
+		{
+			return this->distance < edge.distance;
+		}
+	};
+
+	vector<Edge> graph;
+	int cost;
+	int parent[SIZE];
+
 public:
 	Graph()
 	{
+		cost = 0;
+
 		for (int i = 0; i < SIZE; i++)
 		{
-			degree[i] = NULL;
+			parent[i] = i;
 		}
 	}
 
-	void Insert(int vertex, int edge)
+	void Insert(int x, int y, int distance)
 	{
-		graph[vertex].push_back(edge);
-		degree[edge]++;
+		graph.push_back(Edge(x, y, distance));
 	}
-	void Sort()
+	void Kruskal()
 	{
-		for (int i = 1; i < SIZE; i++)
+		sort(graph.begin(), graph.end());
+	}
+	int Find(int x)
+	{
+		if (parent[x] != x)
 		{
-			if (degree[i] == 0)
-			{
-				queue.push(i);
-			}
+			return parent[x] = Find(parent[x]);
 		}
-		
-		while (!queue.empty())
+		else return x;
+	}
+	void Union(int x, int y)
+	{
+		x = Find(x);
+		y = Find(y);
+
+		if (x < y)
 		{
-			int front = queue.front();
-
-			queue.pop();
-
-			cout << front << " ";
-
-			for (int i = 0; i < graph[front].size(); i++)
-			{
-				int start = graph[front][i];
-				degree[start]--;
-				if (degree[start] == 0)
-				{
-					queue.push(start);
-				}
-			}
+			parent[y] = x;
+		}
+		else
+		{
+			parent[x] = y;
 		}
 	}
+	bool Same(int x, int y)
+	{
+		if (Find(x) == Find(y)) return true;
+		else return false;
+	}
+
 };
 
 int main()
 {
-#pragma region 위상 정렬
-	// 방향 그래프에 존재하는 각 정점들의 선행 순서를 지키며,
-	// 모든 정점을 차례대로 진행하는 알고리즘
+#pragma region 신장 트리
+	// 그래프의 모든 정점을 포함하면서 사이클이 존재하지 않는
+	// 부분 그래프로, 그래프의 모든 정점을 최소 비용으로 연결하는 트리
 
-	// 사이클이 발생하는 경우, 위상 정렬을 수행할 수 없음
+	// 그래프의 정점의 수가 n개일 때, 간선의수는 n-1개
 	
-	// DAG(Directed Acyclic Graph) : 사이클이 존재하지 않는 그래프
-	
-	// 시간 복잡도 : O(W+E)
-
-	// 위상 정렬 방법
-
-	// 1. 진입 차수가 0인 정점을 Queue에 삽입
-	// 2. Queue에서 원소를 꺼내 연결된 모든 간선을 제거
-	// 3. 간선 제거 이후에 진입 차수가 0이 된 정점을 Queue에 삽입
-	// 4. Queue가 비어있을 때까지 2~3번을 반복 수행
+	// 최소 비용 신장 트리
+	// 그래프의 간선들의 가중치 합이 최소인 신장 트리
 
 	Graph graph;
 
-	graph.Insert(1, 2);
-	graph.Insert(1, 5);
-	graph.Insert(2, 3);
-	graph.Insert(3, 4);
-	graph.Insert(4, 6);
-	graph.Insert(5, 6);
-	graph.Insert(6, 7);
+	graph.Insert(1, 2, 67);
+	graph.Insert(1, 4, 28);
+	graph.Insert(1, 5, 17);
+	graph.Insert(1, 7, 12);
+	graph.Insert(2, 4, 24);
+	graph.Insert(2, 5, 64);
+	graph.Insert(3, 5, 20);
+	graph.Insert(3, 6, 35);
+	graph.Insert(4, 7, 13);
+	graph.Insert(5, 6, 40);
+	graph.Insert(5, 7, 73);
 
-	graph.Sort();
+	graph.Kruskal();
 
 #pragma endregion
+
 
 	return 0;
 }
