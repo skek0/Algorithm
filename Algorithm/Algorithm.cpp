@@ -1,127 +1,50 @@
 ﻿#include <iostream>
-#include <vector>
-#include <algorithm>
-#define SIZE 8
+#define SIZE 6
+#define INFINITY 10000000
 
 using namespace std;
-
 class Graph
 {
 private:
-	class Edge
+	int weight[SIZE][SIZE] =
 	{
-	private:
-		int x;
-		int y;
-		int distance;
-		
-	public:
-		Edge(int x, int y, int distance)
-		{
-			this->x = x;
-			this->y = y;
-			this->distance = distance;
-		}
-
-		const int& X()
-		{
-			return x;
-		}
-		const int& Y()
-		{
-			return y;
-		}
-		const int& Distance()
-		{
-			return distance;
-		}
-
-		const bool operator < (const Edge& edge)
-		{
-			return this->distance < edge.distance;
-		}
+		{0,	2, 5, 1, INFINITY, INFINITY},
+		{2, 0, 3, 2, INFINITY, INFINITY},
+		{5, 3, 0, 3, 1, 5},
+		{1, 2, 3, 0, 1, INFINITY},
+		{INFINITY, INFINITY, 1, 1, 0, 2},
+		{INFINITY, INFINITY, 5, INFINITY, 2, 0}
 	};
-
-	vector<Edge> graph;
-	int cost;
-	int parent[SIZE];
-
+	int distance[SIZE];
+	bool visited[SIZE];
 public:
 	Graph()
 	{
-		cost = 0;
-
 		for (int i = 0; i < SIZE; i++)
 		{
-			parent[i] = i;
+			distance[i] = 0;
+			visited[i] = false;
 		}
 	}
-
-	void Insert(int x, int y, int distance)
-	{
-		graph.push_back(Edge(x, y, distance));
-	}
-	void Kruskal()
-	{
-		sort(graph.begin(), graph.end());
-	}
-	int Find(int x)
-	{
-		if (parent[x] != x)
-		{
-			return parent[x] = Find(parent[x]);
-		}
-		else return x;
-	}
-	void Union(int x, int y)
-	{
-		x = Find(x);
-		y = Find(y);
-
-		if (x < y)
-		{
-			parent[y] = x;
-		}
-		else
-		{
-			parent[x] = y;
-		}
-	}
-	bool Same(int x, int y)
-	{
-		if (Find(x) == Find(y)) return true;
-		else return false;
-	}
-
 };
 
 int main()
 {
-#pragma region 신장 트리
-	// 그래프의 모든 정점을 포함하면서 사이클이 존재하지 않는
-	// 부분 그래프로, 그래프의 모든 정점을 최소 비용으로 연결하는 트리
-
-	// 그래프의 정점의 수가 n개일 때, 간선의수는 n-1개
+#pragma region 다익스트라 알고리즘
+	// 시작점으로 부터 모든 노드까지의 최소 거리를 구해주는 알고리즘
 	
-	// 최소 비용 신장 트리
-	// 그래프의 간선들의 가중치 합이 최소인 신장 트리
+	// 1. distance 배열에 weight[시작점 노드]의 값들로
+	//	  초기화
+	// 2. 시작점을 방문 처리
+	// 3. distance 배열에서 최소 비용 노드를 찾고 방문 처리
+	//    단, 이미 방문한 노드는 제외
+	// 4. 최소 비용 노드를 가져갈 지 고민해서 distance 배열을 갱신
+	//	  단, 이미 방문한 노드는 제외
+	// 5. 모든 노드를 방문할 때 까지 3~4를 반복
+	// 방문하지 않은 노드 중에서 가장 작은 distance를 가진 노드를 방문하고,
+	// 그 노드와 연결된 다른 노드까지의 거리를 계산
 
 	Graph graph;
-
-	graph.Insert(1, 2, 67);
-	graph.Insert(1, 4, 28);
-	graph.Insert(1, 5, 17);
-	graph.Insert(1, 7, 12);
-	graph.Insert(2, 4, 24);
-	graph.Insert(2, 5, 64);
-	graph.Insert(3, 5, 20);
-	graph.Insert(3, 6, 35);
-	graph.Insert(4, 7, 13);
-	graph.Insert(5, 6, 40);
-	graph.Insert(5, 7, 73);
-
-	graph.Kruskal();
-
 #pragma endregion
 
 

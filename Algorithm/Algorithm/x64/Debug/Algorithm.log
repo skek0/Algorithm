@@ -1,2 +1,3 @@
 ﻿  Algorithm.cpp
+C:\Users\User A\Desktop\Algorithm\Algorithm\Algorithm.cpp(3,9): warning C4005: 'INFINITY': 매크로 재정의
   Algorithm.vcxproj -> C:\Users\User A\Desktop\Algorithm\Algorithm\x64\Debug\Algorithm.exe
