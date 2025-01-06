@@ -1,52 +1,25 @@
 ﻿#include <iostream>
-#define SIZE 6
-#define INFINITY 10000000
 
 using namespace std;
-class Graph
-{
-private:
-	int weight[SIZE][SIZE] =
-	{
-		{0,	2, 5, 1, INFINITY, INFINITY},
-		{2, 0, 3, 2, INFINITY, INFINITY},
-		{5, 3, 0, 3, 1, 5},
-		{1, 2, 3, 0, 1, INFINITY},
-		{INFINITY, INFINITY, 1, 1, 0, 2},
-		{INFINITY, INFINITY, 5, INFINITY, 2, 0}
-	};
-	int distance[SIZE];
-	bool visited[SIZE];
-public:
-	Graph()
-	{
-		for (int i = 0; i < SIZE; i++)
-		{
-			distance[i] = 0;
-			visited[i] = false;
-		}
-	}
-};
 
 int main()
 {
-#pragma region 다익스트라 알고리즘
-	// 시작점으로 부터 모든 노드까지의 최소 거리를 구해주는 알고리즘
+#pragma region 백트래킹
+	// 해를 찾아가는 도중에 지금의 경로가 해가 될 것 같지 않다면
+	// 더 이상 깊이 들어가지 않고, 이전 단계로 다시 돌아가는 알고리즘
+
+	// 백트래킹의 유망성 판단
+	// 해가 될 만한지 판단한 후에 유망하지 않다고 결정되면,
+	// 그 노드의 이전 노드로 돌아가 다음 자식 노드로 이동
 	
-	// 1. distance 배열에 weight[시작점 노드]의 값들로
-	//	  초기화
-	// 2. 시작점을 방문 처리
-	// 3. distance 배열에서 최소 비용 노드를 찾고 방문 처리
-	//    단, 이미 방문한 노드는 제외
-	// 4. 최소 비용 노드를 가져갈 지 고민해서 distance 배열을 갱신
-	//	  단, 이미 방문한 노드는 제외
-	// 5. 모든 노드를 방문할 때 까지 3~4를 반복
-	// 방문하지 않은 노드 중에서 가장 작은 distance를 가진 노드를 방문하고,
-	// 그 노드와 연결된 다른 노드까지의 거리를 계산
+	// 해가 될 만한 가능성이 있으면 유망하다	(Promising)
+	// 유망하지 않은 노드에 가지 않는 것		(Pruncing)
 
-	Graph graph;
+	/*
+	순열 알고리즘
+	조합 알고리즘
+	*/
 #pragma endregion
-
 
 	return 0;
 }
